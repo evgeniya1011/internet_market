@@ -1,0 +1,121 @@
+[
+  {
+    "model": "catalog.product",
+    "pk": 1,
+    "fields": {
+      "product_name": "DeepPaintBot",
+      "descriptions": "Инструмент для улучшения фотографий, использующий технологии машинного обучения и системы искусственного интеллекта на базе нейронных сетей",
+      "picture": "",
+      "category": 2,
+      "price": "100.00",
+      "date_create": "2023-08-31T07:48:54.109Z",
+      "date_update": "2023-08-31T07:48:54.109Z"
+    }
+  },
+  {
+    "model": "catalog.product",
+    "pk": 2,
+    "fields": {
+      "product_name": "RKN Dump Check",
+      "descriptions": "Бот для проверки IP-адреса, домена или конкретной веб-страницы на предмет присутствия в реестре заблокированных Роскомнадзором ресурсов",
+      "picture": "",
+      "category": 2,
+      "price": "120.00",
+      "date_create": "2023-08-31T07:50:00.539Z",
+      "date_update": "2023-08-31T07:50:00.539Z"
+    }
+  },
+  {
+    "model": "catalog.product",
+    "pk": 3,
+    "fields": {
+      "product_name": "Получение вакансий с hh.ru",
+      "descriptions": "Просматривает сайт hh.ru и по шаблону достает оттуда вакансии — осуществляет вызов во внешнюю систему",
+      "picture": "",
+      "category": 5,
+      "price": "50.00",
+      "date_create": "2023-08-31T08:10:18.599Z",
+      "date_update": "2023-08-31T08:10:41.833Z"
+    }
+  },
+  {
+    "model": "catalog.product",
+    "pk": 4,
+    "fields": {
+      "product_name": "Все о разработке на Python",
+      "descriptions": "Все только актуальные новости из мира разработки на Python",
+      "picture": "",
+      "category": 1,
+      "price": "80.00",
+      "date_create": "2023-08-31T08:12:18.599Z",
+      "date_update": "2023-08-31T08:12:41.833Z"
+    }
+  },
+  {
+    "model": "catalog.product",
+    "pk": 5,
+    "fields": {
+      "product_name": "Frapi",
+      "descriptions": "Программное обеспечение для разметки веток",
+      "picture": "",
+      "category": 3,
+      "price": "140.00",
+      "date_create": "2023-08-31T08:10:18.599Z",
+      "date_update": "2023-08-31T08:10:41.833Z"
+    }
+  },
+  {
+    "model": "catalog.product",
+    "pk": 6,
+    "fields": {
+      "product_name": "PythonCrib",
+      "descriptions": "Приложение-шпаргалка с основными командами для Python",
+      "picture": "",
+      "category": 4,
+      "price": "220.00",
+      "date_create": "2023-08-31T08:10:18.599Z",
+      "date_update": "2023-08-31T08:10:41.833Z"
+    }
+  },
+
+  {
+    "model": "catalog.category",
+    "pk": 1,
+    "fields": {
+      "category_name": "рассылки",
+      "description": "отправка одного уведомления большому количеству участников"
+    }
+  },
+  {
+    "model": "catalog.category",
+    "pk": 2,
+    "fields": {
+      "category_name": "телеграмм-боты",
+      "description": "набор кода, который во время активации выполняет роль пользователя и его функционал зависит только от способностей и потребностей его создателя."
+    }
+  },
+  {
+    "model": "catalog.category",
+    "pk": 3,
+    "fields": {
+      "category_name": "полезные утилиты",
+      "description": "является дополнением к основному приложению и служит для предварительной настройки аппаратуры, операций с файлами или для обеспечения расширенных пользовательских функций"
+    }
+  },
+  {
+    "model": "catalog.category",
+    "pk": 4,
+    "fields": {
+      "category_name": "веб-приложения",
+      "description": "клиент-серверное приложение, в котором клиент взаимодействует с веб-сервером при помощи браузера"
+    }
+  },
+  {
+    "model": "catalog.category",
+    "pk": 5,
+    "fields": {
+      "category_name": "микросервисы",
+      "description": "это веб-сервис, отвечающий за один элемент логики в определенной предметной области"
+    }
+  }
+]
