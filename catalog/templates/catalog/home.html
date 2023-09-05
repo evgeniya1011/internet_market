@@ -1,79 +1,73 @@
-<!doctype html>
-<html lang="en">
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Skystore</title>
-    <link href="/static/css/bootstrap.min.css" rel="stylesheet">
-</head>
-<body>
-<div class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-white border-bottom box-shadow">
-    <h5 class="my-0 mr-md-auto font-weight-normal">Skystore</h5>
-    <nav class="ms-5">
-        <a class="p-2 btn btn-outline-primary" href="/">Каталог</a>
-        <a class="p-2 btn btn-outline-primary" href="/contacts/">Контакты</a>
-    </nav>
-</div>
-
-<div class="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
-    <h1 class="display-4">Skystore</h1>
-    <p class="lead">Skystore - это отличный вариант хранения ваших плагинов и примеров кода, который вы бы хотели
-        продать</p>
-</div>
-
-<div class="container">
-    <div class="row text-center">
+{% extends 'catalog/base.html' %}
+{% block content %}
+<section class="jumbotron text-center">
+    <div class="container">
+        <h1 class="jumbotron-heading">{{ title }}</h1>
+    </div>
+</section>
+<div class="row text-center">
+    {% for product in page_obj %}
         <div class="col-3">
             <div class="card mb-4 box-shadow">
                 <div class="card-header">
-                    <h4 class="my-0 font-weight-normal">Удобный сервис рассылок</h4>
+                    <h4 class="my-0 font-weight-normal">{{ product.product_name|title}}</h4>
                 </div>
                 <div class="card-body">
-                    <h1 class="card-title pricing-card-title">$ 140</h1>
                     <ul class="list-unstyled mt-3 mb-4 text-start m-3">
-                        <li>- Неограниченная лицензия</li>
-                        <li>- Поддержка</li>
-                        <li>- Установка на сервер</li>
-                        <li>- Получение обновлений</li>
+                        <li> {{ product.descriptions|slice:":100"}} </li>
                     </ul>
                     <button type="button" class="btn btn-lg btn-block btn-outline-primary">Купить</button>
+                    <a href="{% url 'catalog:product' product.pk %}" class="btn btn-lg btn-block btn-outline-primary">Подробнее о товаре</a>
                 </div>
             </div>
         </div>
-    </div>
-
-    <footer class="pt-4 my-md-5 pt-md-5 border-top">
-        <div class="row">
-            <div class="col-12 col-md">
-                SkyStore
-                <small class="d-block mb-3 text-muted">&copy; 2023</small>
-            </div>
-            <div class="col-6 col-md">
-                <h5>Категории</h5>
-                <ul class="list-unstyled text-small">
-                    <li><a class="text-muted" href="#">Рассылки</a></li>
-                    <li><a class="text-muted" href="#">Телеграм боты</a></li>
-                    <li><a class="text-muted" href="#">Полезные утилиты</a></li>
-                    <li><a class="text-muted" href="#">Веб-приложения</a></li>
-                    <li><a class="text-muted" href="#">Микросервисы</a></li>
-                </ul>
-            </div>
-            <div class="col-6 col-md">
-                <h5>Дополнительно</h5>
-                <ul class="list-unstyled text-small">
-                    <li><a class="text-muted" href="#">Мы пишем</a></li>
-                </ul>
-            </div>
-            <div class="col-6 col-md">
-                <h5>О нас</h5>
-                <ul class="list-unstyled text-small">
-                    <li><a class="text-muted" href="/contacts/">Контакты</a></li>
-                </ul>
-            </div>
-        </div>
-    </footer>
+    {% endfor %}
 </div>
+<br>
+<div class="col-3 col-md-6 col-sm-12">
+    <div class="card mb-4 box-shadow">
+        <div class="card-header">
+            <h3 class="my-0 font-weight-normal">Заполните данные о новом товаре:</h3>
+        </div>
+        <div class="card-body">
+            <form method="post" enctype="multipart/form-data">
+                {% csrf_token %}
+                <br>
+                <input type="text" name="name" class="form-control" id="name" placeholder="Наименование продукта"><br>
+                <textarea name="descriptions" class="form-control" id="descriptions" placeholder="Описание" required></textarea><br>
+                <input type="file" name="picture" class="form-control-file" id="exampleFormControlFile1" placeholder="Изображение" required><br>>
+                <select class="form-select" aria-label="Пример выбора по умолчанию">
+                    <option selected>Категории</option>
+                    <option value="1">1 - рассылки</option>
+                    <option value="2">2 - телеграмм-боты</option>
+                    <option value="3">3 - полезные утилиты</option>
+                    <option value="4">4 - веб-приложение</option>
+                    <option value="5">5 - микросервисы</option>
+                </select>
+                <input type="text" name="category" class="form-control" id="category" placeholder="Введите номер категории" required><br>
+                <input type="text" name="price" class="form-control" id="price" placeholder="Цена" required><br>
+                <input type="text" name="data_create" class="form-control" id="data_create" placeholder="Дата создания" required><br>
+                <input type="text" name="data_update" class="form-control" id="data_update" placeholder="Дата обновления" required><br>
+                <input class="btn btn-lg btn-block btn-outline-primary" type="submit" value="Отправить"/>
+            </form>
+        </div>
+    </div>
+</div>
+<div class="pagination">
+  <span class="step-links">
+    {% if page_obj.has_previous %}
+    <a href="?page=1">&laquo; первая</a>
+    <a href="?page={{ page_obj.previous_page_number }}">предыдущая</a>
+    {% endif %}
 
-<script src="/static/js/bootstrap.bundle.min.js"></script>
-</body>
-</html>
+    <span class="current">
+      Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}.
+    </span>
+
+    {% if page_obj.has_next %}
+    <a href="?page={{ page_obj.next_page_number }}">следующая</a>
+    <a href="?page={{ page_obj.paginator.num_pages }}">последняя &raquo;</a>
+    {% endif %}
+  </span>
+</div>
+{% endblock %}
