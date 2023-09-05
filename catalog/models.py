@@ -33,7 +33,7 @@ class Category(models.Model):
 
 class Contacts(models.Model):
     contact_name = models.CharField(max_length=100, verbose_name='Имя')
-    ph_number = models.IntegerField(verbose_name='Телефоный номер')
+    ph_number = models.CharField(max_length=100, verbose_name='Телефоный номер')
     message = models.TextField(verbose_name='Сообщение')
 
     def __str__(self):
