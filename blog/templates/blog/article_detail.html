@@ -1,0 +1,24 @@
+{% extends 'catalog/base.html' %}
+{% block content %}
+<div class="row text-center">
+    <div class="col-12">
+        <div class="card mb-4 box-shadow">
+            <div class="card-header">
+                <h4 class="my-0 font-weight-normal">{{object.title|title}} ({{ object.slug }})</h4>
+            </div>
+            <img class="card-img-top"
+                 src="/media/{{ object.preview}}"
+                 alt="Card image cap" />
+            <div class="card-body">
+                <h3 class="card-title pricing-card-title">Просмотры: {{object.view_count }}</h3>
+                <ul class="list-unstyled mt-3 mb-4 text-start m-3">
+                    <li>Содержание: {{object.body }}</li>
+                    <li>Дата создания: {{object.data_create}}</li>
+                </ul>
+                <a href="{% url 'blog:list' %}" type="button" class="btn btn-sm btn-outline-secondary">К списку</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
