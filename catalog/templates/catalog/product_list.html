@@ -1,0 +1,51 @@
+{% extends 'catalog/base.html' %}
+{% block content %}
+<section class="jumbotron text-center">
+    <div class="container">
+        <h1 class="jumbotron-heading">{{ title }}</h1>
+    </div>
+</section>
+<div class="col-12 mb-5">
+    <a class="btn btn-outline-primary" href="{% url 'catalog:create' %}">Добавить товар</a>
+</div>
+<div class="col-12 mb-5">
+    <a class="btn btn-outline-success" href="{% url 'catalog:create_version' %}">Добавить версию</a>
+</div>
+    <div class="row text-center">
+    {% for product in page_obj %}
+        <div class="col-3">
+            <div class="card mb-4 box-shadow">
+                <div class="card-header">
+                    <h4 class="my-0 font-weight-normal">{{ product.product_name|title}}</h4>
+                </div>
+                <div class="card-body">
+                    <ul class="list-unstyled mt-3 mb-4 text-start m-3">
+                        <li> {{ product.descriptions|slice:":100"}} </li>
+                    </ul>
+                    <button type="button" class="btn btn-lg btn-block btn-outline-primary">Купить</button>
+                    <a href="{% url 'catalog:view' product.pk %}" class="btn btn-lg btn-block btn-outline-primary">Подробнее о товаре</a>
+                    <a href="{% url 'catalog:view_version' pk=product.pk %}" class="btn btn-lg btn-block btn-outline-success">Версии</a>
+                </div>
+            </div>
+        </div>
+    {% endfor %}
+</div>
+<br>
+<div class="pagination">
+  <span class="step-links">
+    {% if page_obj.has_previous %}
+    <a href="?page=1">&laquo; первая</a>
+    <a href="?page={{ page_obj.previous_page_number }}">предыдущая</a>
+    {% endif %}
+
+    <span class="current">
+      Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}.
+    </span>
+
+    {% if page_obj.has_next %}
+    <a href="?page={{ page_obj.next_page_number }}">следующая</a>
+    <a href="?page={{ page_obj.paginator.num_pages }}">последняя &raquo;</a>
+    {% endif %}
+  </span>
+</div>
+{% endblock %}
