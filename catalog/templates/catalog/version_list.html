@@ -1,0 +1,28 @@
+<{% extends 'catalog/base.html' %}
+{% block content %}
+<section class="jumbotron text-center">
+    <div class="container">
+        <h2 class="jumbotron-heading">{{ title }}</h2>
+    </div>
+</section>
+    <div class="row text-center">
+    {% for object in object_list %}
+        {% if object.is_active %}
+        <div class="col-4">
+            <div class="card mb-4 box-shadow">
+                <div class="card-body">
+                    <ul class="list-unstyled mt-3 mb-4 text-start m-3">
+                        <h4> название: {{ object.name_version|title}} </h4>
+                        <h4> номер: {{ object.number_version|title}} </h4>
+                    </ul>
+                    <a href="{% url 'catalog:list' %}" class="btn btn-lg btn-block btn-outline-primary">К товару</a>
+
+                    <a href="{% url 'catalog:toggle_activity' object.product.pk %}" class="btn btn-lg btn-block btn-outline-warning">Деактивировать</a>
+                </div>
+            </div>
+        </div>
+        {% endif %}
+    {% endfor %}
+    </div>
+<br>
+{% endblock %}
