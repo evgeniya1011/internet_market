@@ -18,6 +18,7 @@
                     <li>Категория: {{object.category }}</li>
                     <li>Дата создания: {{object.date_create }}</li>
                     <li>Дата обновления: {{object.date_update }}</li>
+                    <li>Пользователь: {{ object.user|default:"Неизвестно" }}</li>
                 </ul>
                 <button type="button" class="btn btn-lg btn-block btn-outline-primary">Купить</button>
             </div>
