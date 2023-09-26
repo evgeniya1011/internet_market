@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     "catalog",
     "blog",
+    "users",
 ]
 
 MIDDLEWARE = [
@@ -141,3 +142,7 @@ EMAIL_USE_SSL = False
 
 SERVER_EMAIL = "zhdavydova@mail.ru"
 DEFAULT_FROM_EMAIL = "zhdavydova@mail.ru"
+
+AUTH_USER_MODEL = 'users.User'
+LOGIN_REDIRECT_URL = '/'
+LOGOUT_REDIRECT_URL = '/'
