@@ -8,8 +8,8 @@
       "picture": "product/тг.png",
       "category": 2,
       "price": "100.00",
-      "date_create": "2023-09-01T10:07:26.215Z",
-      "date_update": "2023-09-04T10:52:12.134Z"
+      "date_create": "2023-09-05T06:34:28.945Z",
+      "date_update": "2023-09-05T06:34:28.945Z"
     }
   },
   {
@@ -21,8 +21,8 @@
       "picture": "product/тг_98gct2R.png",
       "category": 2,
       "price": "120.00",
-      "date_create": "2023-09-01T10:07:26.215Z",
-      "date_update": "2023-09-04T10:52:22.010Z"
+      "date_create": "2023-09-05T06:34:28.945Z",
+      "date_update": "2023-09-05T06:34:28.945Z"
     }
   },
   {
@@ -34,8 +34,8 @@
       "picture": "product/micro.png",
       "category": 5,
       "price": "50.00",
-      "date_create": "2023-09-01T10:07:26.215Z",
-      "date_update": "2023-09-04T10:53:12.666Z"
+      "date_create": "2023-09-05T06:34:28.945Z",
+      "date_update": "2023-09-05T06:34:28.945Z"
     }
   },
   {
@@ -47,8 +47,8 @@
       "picture": "product/рассылки.png",
       "category": 1,
       "price": "80.00",
-      "date_create": "2023-09-01T10:07:26.215Z",
-      "date_update": "2023-09-04T10:54:06.822Z"
+      "date_create": "2023-09-05T06:34:28.945Z",
+      "date_update": "2023-09-05T06:34:28.945Z"
     }
   },
   {
@@ -60,8 +60,8 @@
       "picture": "product/утил.jpg",
       "category": 3,
       "price": "140.00",
-      "date_create": "2023-09-01T10:07:26.215Z",
-      "date_update": "2023-09-04T10:55:07.570Z"
+      "date_create": "2023-09-05T06:34:28.945Z",
+      "date_update": "2023-09-05T06:34:28.945Z"
     }
   },
   {
@@ -73,8 +73,266 @@
       "picture": "product/веб.jpg",
       "category": 4,
       "price": "220.00",
-      "date_create": "2023-09-01T10:07:26.215Z",
-      "date_update": "2023-09-04T10:56:28.676Z"
+      "date_create": "2023-09-05T06:34:28.945Z",
+      "date_update": "2023-09-05T06:34:28.945Z"
+    }
+  },
+  {
+    "model": "catalog.product",
+    "pk": 7,
+    "fields": {
+      "product_name": "Все и обо все",
+      "descriptions": "много полезной информации в одном месте",
+      "picture": "product/утил_ubssY86.jpg",
+      "category": 3,
+      "price": "84.00",
+      "date_create": "2023-09-05T06:41:26.913Z",
+      "date_update": "2023-09-05T06:44:02.861Z"
+    }
+  },
+  {
+    "model": "catalog.product",
+    "pk": 8,
+    "fields": {
+      "product_name": "Что-то интересное",
+      "descriptions": "очень полезный утилит",
+      "picture": "",
+      "category": 3,
+      "price": "75.00",
+      "date_create": "2023-09-08T11:13:14.083Z",
+      "date_update": "2023-09-08T11:13:14.083Z"
+    }
+  },
+  {
+    "model": "catalog.product",
+    "pk": 9,
+    "fields": {
+      "product_name": "Ваш карманный тайм-менеджмент",
+      "descriptions": "приложение для грамотного планирования вашего дня",
+      "picture": "",
+      "category": 4,
+      "price": "120.00",
+      "date_create": "2023-09-09T13:17:37.284Z",
+      "date_update": "2023-09-09T13:17:37.284Z"
+    }
+  },
+  {
+    "model": "catalog.product",
+    "pk": 13,
+    "fields": {
+      "product_name": "Новый тест",
+      "descriptions": "новое новое новое",
+      "picture": "",
+      "category": 3,
+      "price": "45.00",
+      "date_create": "2023-09-20T06:15:35.838Z",
+      "date_update": "2023-09-22T00:18:55.529Z"
+    }
+  },
+  {
+    "model": "catalog.product",
+    "pk": 14,
+    "fields": {
+      "product_name": "чумовое веб-приложение",
+      "descriptions": "что-то на космическом",
+      "picture": "",
+      "category": 4,
+      "price": "250.00",
+      "date_create": "2023-09-20T06:29:44.673Z",
+      "date_update": "2023-09-22T00:01:21.231Z"
+    }
+  },
+  {
+    "model": "catalog.product",
+    "pk": 15,
+    "fields": {
+      "product_name": "Новая рассылка",
+      "descriptions": "обновление, которое все ждали",
+      "picture": "",
+      "category": 1,
+      "price": "55.00",
+      "date_create": "2023-09-20T10:27:29.205Z",
+      "date_update": "2023-09-25T07:18:14.272Z"
+    }
+  },
+  {
+    "model": "catalog.version",
+    "pk": 38,
+    "fields": {
+      "product": 15,
+      "number_version": "1.12.15",
+      "name_version": "Последнее обновление",
+      "is_active": false
+    }
+  },
+  {
+    "model": "catalog.version",
+    "pk": 39,
+    "fields": {
+      "product": 14,
+      "number_version": "85.45.444",
+      "name_version": "тестовая",
+      "is_active": true
+    }
+  },
+  {
+    "model": "catalog.version",
+    "pk": 40,
+    "fields": {
+      "product": 13,
+      "number_version": "10.1.25",
+      "name_version": "Версия 2.0",
+      "is_active": true
+    }
+  },
+  {
+    "model": "catalog.version",
+    "pk": 41,
+    "fields": {
+      "product": 9,
+      "number_version": "11.2.57",
+      "name_version": "новое",
+      "is_active": true
+    }
+  },
+  {
+    "model": "catalog.version",
+    "pk": 42,
+    "fields": {
+      "product": 8,
+      "number_version": "14.58.46",
+      "name_version": "версия 7.2",
+      "is_active": true
+    }
+  },
+  {
+    "model": "catalog.version",
+    "pk": 43,
+    "fields": {
+      "product": 7,
+      "number_version": "15.2/52",
+      "name_version": "Последнее обновление",
+      "is_active": true
+    }
+  },
+  {
+    "model": "catalog.version",
+    "pk": 44,
+    "fields": {
+      "product": 6,
+      "number_version": "5.12.000",
+      "name_version": "версия 5.0",
+      "is_active": true
+    }
+  },
+  {
+    "model": "catalog.version",
+    "pk": 45,
+    "fields": {
+      "product": 5,
+      "number_version": "14.58.46",
+      "name_version": "ТЕСТ",
+      "is_active": true
+    }
+  },
+  {
+    "model": "catalog.version",
+    "pk": 46,
+    "fields": {
+      "product": 4,
+      "number_version": "1.1.1.",
+      "name_version": "Новинка",
+      "is_active": true
+    }
+  },
+  {
+    "model": "catalog.version",
+    "pk": 47,
+    "fields": {
+      "product": 3,
+      "number_version": "3.25.0145",
+      "name_version": "версия 3.2",
+      "is_active": true
+    }
+  },
+  {
+    "model": "catalog.version",
+    "pk": 48,
+    "fields": {
+      "product": 2,
+      "number_version": "0.0.0.0.",
+      "name_version": "начальная",
+      "is_active": true
+    }
+  },
+  {
+    "model": "catalog.version",
+    "pk": 49,
+    "fields": {
+      "product": 1,
+      "number_version": "4.21.845",
+      "name_version": "завершающее обновление",
+      "is_active": true
+    }
+  },
+  {
+    "model": "catalog.version",
+    "pk": 50,
+    "fields": {
+      "product": 15,
+      "number_version": "2.1.12",
+      "name_version": "версия 2.1",
+      "is_active": false
+    }
+  },
+  {
+    "model": "catalog.version",
+    "pk": 51,
+    "fields": {
+      "product": 15,
+      "number_version": "151",
+      "name_version": "44",
+      "is_active": true
+    }
+  },
+  {
+    "model": "catalog.version",
+    "pk": 52,
+    "fields": {
+      "product": 15,
+      "number_version": "555",
+      "name_version": "44",
+      "is_active": false
+    }
+  },
+  {
+    "model": "catalog.version",
+    "pk": 53,
+    "fields": {
+      "product": 14,
+      "number_version": "10.1.25",
+      "name_version": "ррр",
+      "is_active": true
+    }
+  },
+  {
+    "model": "catalog.version",
+    "pk": 54,
+    "fields": {
+      "product": 15,
+      "number_version": "452",
+      "name_version": "лоьшл",
+      "is_active": false
+    }
+  },
+  {
+    "model": "catalog.version",
+    "pk": 55,
+    "fields": {
+      "product": 14,
+      "number_version": "45",
+      "name_version": "vvv",
+      "is_active": true
     }
   },
   {
@@ -115,6 +373,60 @@
     "fields": {
       "category_name": "микросервисы",
       "description": "это веб-сервис, отвечающий за один элемент логики в определенной предметной области"
+    }
+  },
+  {
+    "model": "catalog.contacts",
+    "pk": 1,
+    "fields": {
+      "contact_name": "Иван",
+      "ph_number": "5532146",
+      "message": "Привет"
+    }
+  },
+  {
+    "model": "catalog.contacts",
+    "pk": 2,
+    "fields": {
+      "contact_name": "Иван",
+      "ph_number": "8465",
+      "message": "Вопрос"
+    }
+  },
+  {
+    "model": "catalog.contacts",
+    "pk": 3,
+    "fields": {
+      "contact_name": "Иван",
+      "ph_number": "48651321",
+      "message": "У меня срочный вопрос"
+    }
+  },
+  {
+    "model": "catalog.contacts",
+    "pk": 4,
+    "fields": {
+      "contact_name": "Петр",
+      "ph_number": "89345871264",
+      "message": "Не могу купить товар"
+    }
+  },
+  {
+    "model": "catalog.contacts",
+    "pk": 5,
+    "fields": {
+      "contact_name": "Евгений",
+      "ph_number": "89257810475",
+      "message": "спасибо за быструю доставку"
+    }
+  },
+  {
+    "model": "catalog.contacts",
+    "pk": 6,
+    "fields": {
+      "contact_name": "мрм",
+      "ph_number": "  ",
+      "message": "мрм"
     }
   }
 ]
