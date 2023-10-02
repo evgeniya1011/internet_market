@@ -1,3 +1,5 @@
+from django.conf import settings
+from django.core.cache import cache
 from django.db import transaction
 from django.forms import inlineformset_factory
 from django.http import HttpResponseRedirect
@@ -7,12 +9,15 @@ from django.views.generic import DetailView, CreateView, ListView, UpdateView
 
 from catalog.forms import ProductForm, VersionBaseInlineFormSet, VersionForm
 from catalog.models import Product, Contacts, Category, Version
+from catalog.services import get_cache_categories
 
 
 class ProductCreateView(CreateView):
     model = Product
     form_class = ProductForm
-    success_url = reverse_lazy('catalog:list')
+
+    def get_success_url(self, *args, **kwargs):
+        return reverse('catalog:view', args=[self.object.id])
 
     def form_valid(self, form):
         self.object = form.save()
@@ -21,17 +26,14 @@ class ProductCreateView(CreateView):
         return super().form_valid(form)
 
 
-
-class ProductListView(ListView):
-    model = Product
+class CategoryListView(ListView):
+    model = Category
     content_object_name = 'page_obj'
     paginate_by = 3
 
-    def get_queryset(self):
-        return Product.objects.order_by('-date_create')
-
     def get_context_data(self, **kwargs):
         context_data = super().get_context_data(**kwargs)
+        context_data['object_list'] = get_cache_categories()
         context_data['title'] = 'Наши товары'
         return context_data
 
@@ -86,8 +88,12 @@ class ContactsCreateView(CreateView):
 class ProductDetailViews(DetailView):
     model = Product
 
+
+class ProductCategoryListView(ListView):
+    model = Product
+    template_name = 'catalog/product_category_list.html'
+
     def get_context_data(self, *args, **kwargs):
         context_data = super().get_context_data(*args, **kwargs)
-        product_name = Product.objects.get(pk=self.kwargs.get('pk'))
-        context_data['object'] = product_name
+        context_data['object_list'] = self.object_list.filter(category=self.kwargs.get('pk'))
         return context_data
